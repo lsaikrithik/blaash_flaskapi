@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="box">
+    <h2 class="subtitle">Top 5 Viewed Engagement Posts</h2>
+
+    <form action="{{ url_for('show_top_posts') }}" method="get" class="field has-addons">
+        <div class="control">
+            <input type="text" name="tenant_id" class="input" placeholder="Enter Tenant ID" required>
+        </div>
+        <div class="control">
+            <button type="submit" class="button is-primary">Get Top Posts</button>
+        </div>
+    </form>
+
+    <div class="content mt-4">
+        {% if posts %}
+            <ul>
+                {% for post in posts %}
+                    <li>
+                        <strong>{{ post.thumbnail_title }}</strong> - 
+                        <a href="{{ post.thumbnail_url }}" target="_blank">View Content</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No posts to display. Please enter a valid Tenant ID.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
