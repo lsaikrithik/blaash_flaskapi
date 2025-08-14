@@ -1,0 +1,25 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Flask Engagement App</h1>
+            <nav>
+                <a href="/product/new">Create Product</a> |
+                <a href="/collection/new">Create Collection</a> |
+                <a href="/collections">View Collections</a>|
+                <a href="/top-posts">Top 5 Posts</a>
+            </nav>
+            <hr>
+            {% block content %}{% endblock %}
+        </div>
+    </section>
+</body>
+</html>

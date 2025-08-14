@@ -1,0 +1,32 @@
+<!-- templates/create_product.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Create Product</h2>
+<form action="/product" method="post">
+    <div class="field">
+        <label class="label">Product Name</label>
+        <div class="control">
+            <input class="input" type="text" name="name" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Product Image URL</label>
+        <div class="control">
+            <input class="input" type="url" name="image_url">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">SKU</label>
+        <div class="control">
+            <input class="input" type="text" name="sku" required>
+        </div>
+    </div>
+
+    <div class="control">
+        <button class="button is-primary" type="submit">Create Product</button>
+    </div>
+</form>
+{% endblock %}
